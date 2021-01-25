@@ -30,7 +30,7 @@ module.exports = {
     async store(req, res) {
         const { idDisciplina, data, questoes } = req.body;
 
-
+        let gabarito;
         try {
             gabarito = await Gabarito.create({
                 idDisciplina: idDisciplina,
