@@ -14,6 +14,7 @@ module.exports = {
             });
         }
     },
+
     async store(req, res) {
         const { nome } = req.body;
         let aluno;
@@ -34,8 +35,6 @@ module.exports = {
                     error: error
                 });
             }
-
-
             try {
                 if (!aluno) {
                     aluno = await Aluno.create({ nome });
