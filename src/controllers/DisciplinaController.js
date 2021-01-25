@@ -47,7 +47,8 @@ module.exports = {
         }
         return res.json({
             sucesso: true,
-            idDisciplina: disciplina._id
+            idDisciplina: disciplina._id,
+            Nome:disciplina.nome
         });
 
     },
