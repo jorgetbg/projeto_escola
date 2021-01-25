@@ -4,7 +4,7 @@ const Aluno = require('../models/Aluno');
 const Gabarito = require('../models/Gabarito');
 const mongoose = require('mongoose');
 
-const media = 2;
+const media = 7;
 module.exports = {
 
     async store(req, res) {

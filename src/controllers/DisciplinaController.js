@@ -4,7 +4,7 @@ const RespAluno = require('../models/RespAluno');
 const Aluno = require('../models/Aluno');
 
 
-const media = 2;
+const media = 7;
 
 module.exports = {
 
