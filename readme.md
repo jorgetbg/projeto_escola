@@ -18,7 +18,7 @@ Aqui retorna os alunos aprovados em uma determina prova, onde a entrada será o 
 ### Aprovado Disciplina
 Aqui retorna os alunos aprovados em uma determina disciplina, onde a entrada será o Id da disciplina, ele fará uma média aritmetica somando todas as provas.
 
-### Nota Final prova
+### Nota Final Prova
 Aqui retorna todos os alunos que realizaram uma determinada prova, e suas respectivas notas. 
 Onde a entrada será o Id do Gabarito.
 
