@@ -70,10 +70,9 @@ module.exports = {
     async notafinalDisciplina(req, res) {
         const { idDisciplina } = req.body;
         let alunosAprovados = {};
-        console.log(idDisciplina);
+
         alunosAprovados = await fazerlista(idDisciplina, 2);
-        console.log('000000000000000000');
-        console.log('alunosAprovados');
+
         return res.json({
             sucesso: true,
             alunos: alunosAprovados
@@ -84,7 +83,7 @@ module.exports = {
 
 };
 
-async function fazerlista (idDisciplina, operador) {
+async function fazerlista(idDisciplina, operador) {
     switch (operador) {
         case 1: {
             let gabaritos
@@ -102,7 +101,7 @@ async function fazerlista (idDisciplina, operador) {
             try {
                 for (let i = 0; i < gabaritos.length; i++) {
                     respAlunoGabarito = await RespAluno.find({ idGabarito: gabaritos[i]._id }).populate('idAluno');
-                    //console.log(respAlunoGabarito);
+
                     respAlunos = respAlunos.concat(respAlunoGabarito);
                 }
             } catch (error) {
@@ -111,7 +110,7 @@ async function fazerlista (idDisciplina, operador) {
                     error: error
                 });
             }
-            //console.log(respAlunos);
+
 
             let alunos = {};
 
@@ -148,7 +147,6 @@ async function fazerlista (idDisciplina, operador) {
 
         }
         case 2: {
-            console.log(idDisciplina);
             let gabaritos
             try {
                 gabaritos = await Gabarito.find({ idDisciplina: idDisciplina });
@@ -158,14 +156,14 @@ async function fazerlista (idDisciplina, operador) {
                     error: error
                 });
             }
-            console.log(gabaritos);
+
             let respAlunos = [];
 
             //alunos que responderam aquele gabarito
             try {
                 for (let i = 0; i < gabaritos.length; i++) {
                     respAlunoGabarito = await RespAluno.find({ idGabarito: gabaritos[i]._id }).populate('idAluno');
-                    //console.log(respAlunoGabarito);
+
                     respAlunos = respAlunos.concat(respAlunoGabarito);
                 }
             } catch (error) {
@@ -187,7 +185,7 @@ async function fazerlista (idDisciplina, operador) {
                 }
                 alunos[respAluno.idAluno._id].resolucoes.push(respAluno);
             })
-            console.log(respAlunos);
+
             let alunosAprovados = [];
             //for para opter a nota final do aluno, somando a nota de todas as provas feitas pelo aluno.
             for (let idAluno in alunos) {
@@ -201,8 +199,7 @@ async function fazerlista (idDisciplina, operador) {
                     nota: alunos[idAluno].nota
                 });
             }
-            console.log('____________');
-            console.log(alunosAprovados);
+
 
             return alunosAprovados;
 

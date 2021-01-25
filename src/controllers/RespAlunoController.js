@@ -4,7 +4,7 @@ const Aluno = require('../models/Aluno');
 const Gabarito = require('../models/Gabarito');
 const mongoose = require('mongoose');
 
-const media=2;
+const media = 2;
 module.exports = {
 
     async store(req, res) {
@@ -66,8 +66,7 @@ module.exports = {
 
             });
         }
-        console.log(aluno);
-        //return res.json(respAluno);
+
         return res.json({
             sucesso: true,
             idResposta: respAluno._id,

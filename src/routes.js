@@ -1,5 +1,5 @@
 const express = require('express');
-//const multer = require('multer');
+
 
 const DisciplinaController = require('./controllers/DisciplinaController');
 const GabaritoController = require('./controllers/GabaritoController');
@@ -21,7 +21,7 @@ routes.get('/notafinalDisciplina', DisciplinaController.notafinalDisciplina);//n
 routes.get('/notaFinalProva', RespAlunoController.notafinalProva);//nota final do aluno em um determinado gabarito/prova
 routes.get('/todasDisciplinas', DisciplinaController.todasDisciplinas);//lista todas as disciplinas
 routes.get('/todosAlunos', AlunoController.todosAlunos); //lista alunos
-routes.get('/todosGabaritos',GabaritoController.todosGabaritos);//lista gabaritos
+routes.get('/todosGabaritos', GabaritoController.todosGabaritos);//lista gabaritos
 routes.get('/aprovadosprova', GabaritoController.aprovadoProva);//alunos aprovados em uma unica prova
 
 
