@@ -15,7 +15,7 @@ E com esses dados incluidos podemos partir para as funções do aplicativo, onde
 ### Aprovado na Prova
 Aqui retorna os alunos aprovados em uma determina prova, onde a entrada será o Id do Gabarito.
 
-###Aprovado Disciplina
+### Aprovado Disciplina
 Aqui retorna os alunos aprovados em uma determina disciplina, onde a entrada será o Id da disciplina, ele fará uma média aritmetica somando todas as provas.
 
 ### Nota Final prova
