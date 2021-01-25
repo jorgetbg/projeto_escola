@@ -6,31 +6,32 @@ a ideia aqui é desenvolver algumas funções de get e post no banco.
 A versão estavel está na v1.0.5
 
 
-##Usuario
+## Usuario
 Com um frontend produzido no futuro, o usuario poderá cadastrar Aluno, Disciplina, Gabarito, e Resposta do Aluno.
 E com esses dados incluidos podemos partir para as funções do aplicativo, onde ele corrigira a resposta incluida com o gabarito.
 
-##Após isso temos as opções abaixo para o usuario conseguir utilizar
+## Após isso temos as opções abaixo para o usuario conseguir utilizar
 
-###Aprovado na Prova
+### Aprovado na Prova
 Aqui retorna os alunos aprovados em uma determina prova, onde a entrada será o Id do Gabarito.
 
 ###Aprovado Disciplina
 Aqui retorna os alunos aprovados em uma determina disciplina, onde a entrada será o Id da disciplina, ele fará uma média aritmetica somando todas as provas.
 
-###Nota Final prova
+### Nota Final prova
 Aqui retorna todos os alunos que realizaram uma determinada prova, e suas respectivas notas. 
 Onde a entrada será o Id do Gabarito.
 
-###Nota Final Disciplina
+### Nota Final Disciplina
 Aqui retorna todos os alunos que realizaram uma determinada disciplina, e suas respectivas notas. 
 Onde a entrada será o Id do Gabarito.
 
-###Listar Provas
+### Listar Provas
 Lista todas as provas do sistema, nesse caso ele trás o retorno de todos os gabaritos
-###Listar Disciplinas
+
+### Listar Disciplinas
 Lista todas as disciplinas
-###Listar Alunos
+### Listar Alunos
 Lista todos os Alunos
 
 Para acessar a documentação e forma de entrada de dados acesse o link abaixo, pois a documentação foi produzida utilizando a aplicação Swagger
