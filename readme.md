@@ -3,6 +3,10 @@
 Um projeto de gestão de escola, a principio uma aplicação REST, para poder em um futuro fazer todo o frontend da aplicação,
 a ideia aqui é desenvolver algumas funções de get e post no banco.
 
+# Para Testes
+Afim de testes o projeto para as solicitações post e get, pode-se fazer diretamente no link
+ 177.71.154.152:8087
+
 A versão estavel está na v1.0.5
 
 
