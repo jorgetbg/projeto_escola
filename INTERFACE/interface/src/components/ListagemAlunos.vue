@@ -1,11 +1,9 @@
 <template>
-<div>
-    <p v-for="aluno in alunos" :key="aluno._id"> 
-
-    {{aluno.nome}}
+  <div>
+    <p v-for="aluno in alunos" :key="aluno._id">
+      {{ aluno.nome }}
     </p>
-
-</div>
+  </div>
 </template>
 
 <script>

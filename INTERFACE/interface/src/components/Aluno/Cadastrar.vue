@@ -16,7 +16,7 @@ export default {
   methods: {
     armazenar() {
       this.$emit("cadastro", this.name);
-      this.name="";
+      this.name = "";
     },
   },
 };

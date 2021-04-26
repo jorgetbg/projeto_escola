@@ -1,41 +1,107 @@
 
 <template>
   <div>
-    <Inicio
-      v-if="opcao == 'inicio'"
-      v-on:cadastrar="opcao = 'cadastrar'"
-      v-on:listar="opcao = 'listar'"
+    <Menu
+      v-if="opcaop == 'inicio'"
+      v-on:aluno="
+        {
+          opcaop = 'aluno';
+          opcao = 'aluno';
+        }
+      "
+      v-on:disciplina="
+        {
+          opcaop = 'disciplina';
+          opcao = 'disciplina';
+        }
+      "
     />
-    <Cadastrar v-else-if="opcao == 'cadastrar'" v-on:cadastro="armazenar" v-on:encerrar="opcao='inicio'" />
-    <Listar v-else-if="opcao=='listar'" :names="names" v-on:voltar="opcao='inicio'"/>
-   
+
+    <div v-else-if="opcaop == 'aluno'">
+      <InicioAluno
+        v-if="opcao == 'aluno'"
+        v-on:cadastrar="opcao = 'alunoCadastrar'"
+        v-on:listar="opcao = 'alunoListar'"
+        v-on:menu="opcaop = 'inicio'"
+      />
+      <CadastrarAluno
+        v-else-if="opcao == 'alunoCadastrar'"
+        v-on:cadastro="armazenarAluno"
+        v-on:encerrar="opcao = 'aluno'"
+      />
+      <ListarAluno
+        v-else-if="opcao == 'alunoListar'"
+        v-on:voltar="opcao = 'aluno'"
+      />
+    </div>
+    <div v-else-if="opcaop == 'disciplina'">
+      <InicioDisciplina
+        v-if="opcao == 'disciplina'"
+        v-on:cadastrar="opcao = 'disciplinaCadastrar'"
+        v-on:listar="opcao = 'disciplina_listar'"
+        v-on:menu="opcaop = 'inicio'"
+      />
+      <CadastrarDisciplina
+        v-else-if="opcao == 'disciplinaCadastrar'"
+        v-on:cadastro="armazenarDisciplina"
+        v-on:encerrar="opcao = 'disciplina'"
+      />
+      <ListarDisciplina
+        v-else-if="opcao == 'disciplinaListar'"
+        v-on:voltar="opcao = 'disciplina'"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import Inicio from "./Inicio";
-import Cadastrar from "./Cadastrar";
-import Listar from "./Listar"
+import InicioAluno from "./Aluno/Inicio";
+import CadastrarAluno from "./Aluno/Cadastrar";
+import ListarAluno from "./Aluno/Listar";
+import Alunos from "../services/Aluno";
+
+import InicioDisciplina from "./Disciplina/Inicio";
+import CadastrarDisciplina from "./Disciplina/Cadastrar";
+import ListarDisciplina from "./Disciplina/Listar";
+import Disciplinas from "../services/Disciplina";
+
+import Menu from "./MenuInicial";
 
 export default {
   data() {
     return {
-      names: [],
+      aluno: {
+        nome: String,
+      },
       opcao: "inicio",
+      opcaop: "inicio",
+      disciplina: {
+        nome: String,
+      },
     };
   },
   methods: {
-    armazenar(name) {
-      this.names.push(name);
+    armazenarAluno(name) {
+      this.aluno.nome = name;
 
-      console.log(`chamar rota cadastrar aluno, cadastrando: ${name}`);
+      Alunos.set(this.aluno).then(alert("Salvo com sucesso"));
+    },
+    armazenarDisciplina(name) {
+      this.disciplina.nome = name;
+      Disciplinas.set(this.aluno).then(alert("Salvo com sucesso"));
     },
   },
 
   components: {
-    Inicio,
-    Cadastrar,
-    Listar
+    Menu,
+
+    InicioAluno,
+    CadastrarAluno,
+    ListarAluno,
+
+    InicioDisciplina,
+    CadastrarDisciplina,
+    ListarDisciplina,
   },
 };
 </script>
